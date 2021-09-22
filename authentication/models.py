@@ -6,14 +6,15 @@ from .manager import CustomUserManager
 
 
 class User(AbstractBaseUser):
-    email = models.EmailField(verbose_name='email address', max_length=255, unique=True)
-    name = models.CharField(max_length=255)
+    email = models.EmailField(max_length=255, unique=True)
+    name = models.CharField(max_length=255, null=True, blank=True)
     is_active = models.BooleanField(default=True)
 
-    objects = CustomUserManager()
-
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['name']
+    EMAIL_FIELD = 'email'
+    REQUIRED_FIELDS = []
+
+    objects = CustomUserManager()
 
     def __str__(self):
         return self.email
