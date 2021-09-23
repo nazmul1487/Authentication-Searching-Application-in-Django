@@ -39,6 +39,10 @@
             <ul class="navbar-nav ml-auto">
                 {% if request.user.is_authenticated %}
                     <li class="nav-item">
+                        <a class="nav-link" href="{% url 'search' %}">Search</a>
+                    </li>
+
+                    <li class="nav-item">
                         <a class="nav-link" >{{ request.user }}</a>
                     </li>
                     <li class="nav-item">
