@@ -2,8 +2,10 @@ from rest_framework import serializers
 from search.models import UserInput
 
 
-class SearchSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = UserInput
-        fields = ['user', 'inputValue']
+class SearchSerializer(serializers.Serializer):
+    timestamp = serializers.DateTimeField()
+    inputValue = serializers.CharField(max_length=200)
+
+
+
 
