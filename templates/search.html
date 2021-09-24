@@ -39,12 +39,12 @@
 
 		}
 
-		.login_btn {
+		.khoj_btn {
 			width: 100%;
-			background: #33ccff !important;
+			background: #042834 !important;
 			color: white !important;
 		}
-		.login_btn:focus {
+		.khoj_btn:focus {
 			box-shadow: none !important;
 			outline: 0px !important;
 		}
@@ -82,7 +82,9 @@
                     <form method="post">
                             {% csrf_token %}
                             {{ search_form.as_p }}
-                            <input  type="submit" value="Khoj" />
+                        <div class="d-flex justify-content-center mt-3 login_container">
+				 			<input class="btn khoj_btn" type="submit" value="Khoj">
+				   		</div>
                     </form>
 
 				</div>
